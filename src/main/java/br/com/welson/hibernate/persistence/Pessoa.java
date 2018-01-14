@@ -1,17 +1,19 @@
 package br.com.welson.hibernate.persistence;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "pessoa")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Pessoa {
 
     private Long id;
     private String nome;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "inc")
+    @GenericGenerator(name = "inc", strategy = "increment")
     public Long getId() {
         return id;
     }

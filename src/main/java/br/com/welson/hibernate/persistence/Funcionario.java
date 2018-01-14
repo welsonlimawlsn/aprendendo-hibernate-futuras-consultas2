@@ -1,12 +1,11 @@
 package br.com.welson.hibernate.persistence;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@DiscriminatorValue("F")
+@Table(name = "cliente")
+@PrimaryKeyJoinColumn(name = "pessoa_id")
 public class Funcionario extends Pessoa {
 
     private BigDecimal salario;

@@ -6,6 +6,8 @@
         <class>br.com.welson.hibernate.persistence.Pessoa</class>
         <class>br.com.welson.hibernate.persistence.Cliente</class>
         <class>br.com.welson.hibernate.persistence.Funcionario</class>
+        <class>br.com.welson.hibernate.persistence.Categoria</class>
+        <class>br.com.welson.hibernate.persistence.Produto</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:sqlserver://localhost:1433;databaseName=hibernate2"/>
             <property name="hibernate.connection.driver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>

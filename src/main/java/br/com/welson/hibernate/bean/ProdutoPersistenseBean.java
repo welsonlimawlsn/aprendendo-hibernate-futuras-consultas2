@@ -65,4 +65,21 @@ public class ProdutoPersistenseBean implements Serializable {
         JpaUtil.close();
     }
 
+    public void executa4() {
+        EntityManager manager = JpaUtil.getEntityManger();
+        EntityTransaction transaction = manager.getTransaction();
+        transaction.begin();
+
+        Categoria carne = new Categoria();
+        carne.setNome("Carnes");
+
+        Produto produto = new Produto("Picanha", carne);
+
+        manager.persist(produto);
+
+        transaction.commit();
+        manager.close();
+        JpaUtil.close();
+    }
+
 }

@@ -31,7 +31,8 @@ public class Categoria {
     }
 
     //OneToMany e ManyToMany tem por padrão o comportamento LAZY - só procura as dependencias quando necessario
-    @OneToMany(mappedBy = "categoria", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "categoria", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    //orphanRemoval = true - Exclui os produtos orfãos de Categoria
     public List<Produto> getProdutos() {
         return produtos;
     }

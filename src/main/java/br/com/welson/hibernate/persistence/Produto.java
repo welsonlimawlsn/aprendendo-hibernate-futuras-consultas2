@@ -39,7 +39,8 @@ public class Produto {
     }
 
     //ManyToOne e @OneToOne por padrao tem o comportamento EAGER - já procura tudo no banco de dados mesmo sem necessidade dos dados
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+
+    @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     public Categoria getCategoria() {
         return categoria;
     }
